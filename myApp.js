@@ -7,17 +7,17 @@ console.log("Hello World");
 
 app.use("/public", express.static(__dirname + "/public"));
 var response = "hello json";
-if(mySecret === "uppercase"){
-  app.get("/json", (req, res) => {
-    res.json({response}.toUpperCase());
-});
+if(mySecret == "uppercase"){
+    let aux = response.toUpperCase();
+    app.get("/json", (req, res) => {
+        res.json(aux);
+    });
 }else{
-  app.get("/json", (req, res) => {
-    res.json({response});
-});
+    app.get("/json", (req, res) => {
+        res.json(response);
+    });
 };
-
-
+  
 
 
 
